@@ -138,7 +138,9 @@ class GQAObjectDataset(Dataset):
 
         # Get Features
         features = torch.from_numpy(np.array(self.features[entry["image"]]))
-        spatials = torch.from_numpy(np.array(self.spatials[entry["image"]]))[:, :4]
+        spatials = torch.from_numpy(np.array(self.spatials[entry["image"]]))
+        if self.lxmert:
+            spatials = spatials[:, :4]
         target = entry["answer"]
         idx = entry["idx"]
 
