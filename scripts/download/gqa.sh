@@ -7,8 +7,8 @@ mkdir -p data/GQA-Features
 mkdir -p data/GQA-Questions
 
 # Get GQA Features
-wget --no-check-certificate https://nlp1.cs.unc.edu/data/lxmert_data/vg_gqa_imgfeat/vg_gqa_obj36.zip
-wget --no-check-certificate https://nlp1.cs.unc.edu/data/lxmert_data/vg_gqa_imgfeat/gqa_testdev_obj36.zip
+wget --no-check-certificate https://nlp.cs.unc.edu/data/lxmert_data/vg_gqa_imgfeat/vg_gqa_obj36.zip
+wget --no-check-certificate https://nlp.cs.unc.edu/data/lxmert_data/vg_gqa_imgfeat/gqa_testdev_obj36.zip
 unzip vg_gqa_obj36.zip
 unzip gqa_testdev_obj36.zip
 
