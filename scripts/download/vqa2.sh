@@ -8,8 +8,8 @@ mkdir -p data/VQA2-Questions
 mkdir -p data/VQA2-Images
 
 # Get VQA2 Features
-wget --no-check-certificate https://nlp1.cs.unc.edu/data/lxmert_data/mscoco_imgfeat/train2014_obj36.zip
-wget --no-check-certificate https://nlp1.cs.unc.edu/data/lxmert_data/mscoco_imgfeat/val2014_obj36.zip
+wget --no-check-certificate https://nlp.cs.unc.edu/data/lxmert_data/mscoco_imgfeat/train2014_obj36.zip
+wget --no-check-certificate https://nlp.cs.unc.edu/data/lxmert_data/mscoco_imgfeat/val2014_obj36.zip
 unzip train2014_obj36.zip
 unzip val2014_obj36.zip
 
