@@ -198,6 +198,17 @@ conda install pytorch-lightning -c conda-forge
 pip install typed-argument-parser h5py opencv-python matplotlib annoy seaborn spacy scipy transformers scikit-learn
 ```
 
+### Docker on Linux w/ GPU & CUDA11.0
+
+```bash
+# Create Python Environment (assumes Nvidia Docker)
+
+### Build docker image
+DOCKER_BUILDKIT=1 docker build -t vqa-outliers --build-arg UID=`id -u` .
+### Run docker container
+docker run -it --rm --gpus all --shm-size 16G --name vqa-outliers-container -v $PWD:/opt/ml vqa-outliers
+```
+
 ---
 
 ### Note
