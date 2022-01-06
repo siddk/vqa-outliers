@@ -82,7 +82,7 @@ the raw images ourselves as follows (again, this will take a ton of disk space):
 # Note: GPU Recommended for Faster Extraction
 
 # Extract VQA-2 Grid Features
-python scripts/extract.py --dataset vqa2 --images data/VQA-Images --spatial data/VQA-Spatials
+python scripts/extract.py --dataset vqa2 --images data/VQA2-Images --spatial data/VQA2-Spatials
 
 # Extract GQA Grid Features
 python scripts/extract.py --dataset gqa --images data/GQA-Images --spatial data/GQA-Spatials
