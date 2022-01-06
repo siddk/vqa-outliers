@@ -115,7 +115,7 @@ basis, over the course of training. To train models and dump these statistics, u
 follows (again, for the BottomUp-TopDown Model, on VQA2-Sports):
 
 ```bash
-python cartograph.py --dataset vqa2 --split sports --mode butd
+python cartograph.py --dataset vqa2 --split sports --mode butd --sync
 ```
 
 Once you've trained a model and generated the necessary statistics, you can plot the corresponding map using
