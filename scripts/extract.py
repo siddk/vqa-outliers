@@ -29,10 +29,10 @@ class ArgumentParser(Tap):
 class OOMDataset(Dataset):
     def __init__(self, path, transform):
         self.path, self.transform = path, transform
-        self.images = [x for x in os.listdir(os.path.join(path, "images")) if ".jpg" in x]
+        self.images = [x for x in os.listdir(os.path.join(path)) if ".jpg" in x]
 
     def __getitem__(self, index):
-        i_path = os.path.join(self.path, "images", self.images[index])
+        i_path = os.path.join(self.path, self.images[index])
         with open(i_path, "rb") as f:
             img = Image.open(f)
             img = img.convert("RGB")
