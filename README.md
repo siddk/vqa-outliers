@@ -82,7 +82,7 @@ the raw images ourselves as follows (again, this will take a ton of disk space):
 # Note: GPU Recommended for Faster Extraction
 
 # Extract VQA-2 Grid Features
-python scripts/extract.py --dataset vqa2 --images data/VQA-Images --spatial data/VQA-Spatials
+python scripts/extract.py --dataset vqa2 --images data/VQA2-Images --spatial data/VQA2-Spatials
 
 # Extract GQA Grid Features
 python scripts/extract.py --dataset gqa --images data/GQA-Images --spatial data/GQA-Spatials
@@ -115,7 +115,7 @@ basis, over the course of training. To train models and dump these statistics, u
 follows (again, for the BottomUp-TopDown Model, on VQA2-Sports):
 
 ```bash
-python cartograph.py --dataset vqa2 --split sports --mode butd
+python cartograph.py --dataset vqa2 --split sports --mode butd --sync
 ```
 
 Once you've trained a model and generated the necessary statistics, you can plot the corresponding map using
@@ -196,6 +196,17 @@ conda install ipython jupyter
 conda install pytorch-lightning -c conda-forge
 
 pip install typed-argument-parser h5py opencv-python matplotlib annoy seaborn spacy scipy transformers scikit-learn
+```
+
+### Docker on Linux w/ GPU & CUDA11.0
+
+```bash
+# Create Python Environment (assumes Nvidia Docker)
+
+### Build docker image
+DOCKER_BUILDKIT=1 docker build -t vqa-outliers --build-arg UID=`id -u` .
+### Run docker container
+docker run -it --rm --gpus all --shm-size 16G --name vqa-outliers-container -v $PWD:/opt/ml vqa-outliers
 ```
 
 ---

@@ -582,9 +582,8 @@ def active():
         nn.train()
         mt_logger.log_hyperparams(args)
         checkpoint_callback = ModelCheckpoint(
-            filepath=os.path.join(
-                args.save_dir, "runs", run_name, "%s-{epoch:02d}-{val_loss:.3f}-{val_acc:.3f}" % args.mode
-            ),
+            dirpath=os.path.join(args.save_dir, "runs", run_name),
+            filename= args.mode + "-{epoch:02d}-{val_loss:.3f}-{val_acc:.3f}",
             monitor="val_acc",
             mode="max",
             save_top_k=1,

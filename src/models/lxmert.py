@@ -127,7 +127,8 @@ class LXMERT(pl.LightningModule):
         else:
             log = dict(pbar)
 
-        return {"progress_bar": pbar, "log": log}
+        for k, v in log.items():
+            self.log(k, v)
 
     def validation_step(self, val_batch, batch_idx):
         input_ids, attn, obj_features, obj_boxes, token_types, answer, idxs = val_batch

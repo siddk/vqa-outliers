@@ -133,7 +133,8 @@ class ObjectLogisticRegression(pl.LightningModule):
         else:
             log = dict(pbar)
 
-        return {"progress_bar": pbar, "log": log}
+        for k, v in log.items():
+            self.log(k, v)
 
     def validation_step(self, val_batch, batch_idx):
         img, spatials, question, answer, idxs = val_batch
